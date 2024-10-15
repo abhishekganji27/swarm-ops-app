@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h1> Nodes </h1>
+{% if res_list %}
+<div class="row">
+{% for item in res_list %}
+
+                <div class="col-12 col-sm-6 col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                                <h5 class="card-title"> {{ item.attrs.Spec.Name }} </h5>
+                                <p class="card-text">id: {{ item.attrs.ID }}</p>
+                                <div class="card-options">
+                                        <a href="#" class="btn btn-outline-primary">Inspect</a>
+                                        <a href="#" class="btn btn-outline-primary">Update</a>
+                                        <a href="#" class="btn btn-outline-primary">Delete</a>
+                                </div>
+                    </div>
+                </div>
+            </div>
+
+{% endfor%}
+</div>
+{% else %}
+
+<p> None </p>
+
+{% endif %}
+
+{% endblock %}
