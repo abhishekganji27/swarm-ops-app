@@ -44,13 +44,13 @@ const Services = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
         {servicesData.map((service) => (
           <div
-            key={service.id}
+            key={service.attrs.id}
             className={`flex flex-col rounded-xl shadow-md p-6 transition duration-200 
               ${isDarkTheme ? 'bg-gray-800 text-gray-200' : 'bg-white text-black'} h-full transform hover:scale-105`} // Hover effect
-            onClick={() => navigate(`/services/${service.id}`)} // Navigate to the service details page
+            onClick={() => navigate(`/services/inspect/${service.attrs.id}`)} // Navigate to the service details page
           >
             <div className="flex justify-between items-center">
-              <h2 className="text-xl font-bold mb-2 truncate">{service.name}</h2>
+              <h2 className="text-xl font-bold mb-2 truncate">{service.attrs.Spec.Name}</h2>
               <FontAwesomeIcon
                 icon={faTrash}
                 className={`cursor-pointer ${isDarkTheme ? 'text-gray-300 hover:text-red-500' : 'text-gray-700 hover:text-red-500'}`}
@@ -64,7 +64,7 @@ const Services = () => {
               />
               <strong>ID:</strong>
               <span className={`font-medium ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} ml-2`}>
-                {service.id}
+                {service.attrs.id}
               </span>
             </p>
           </div>
