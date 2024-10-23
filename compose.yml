@@ -1,3 +1,9 @@
+networks:
+  swarmops_net:
+    name: swarmops_net
+    driver: overlay
+    attachable: true
+
 services:
   backend:
     build: ./backend
@@ -5,11 +11,14 @@ services:
     # image: abhishekganji27/docker-swarm-dashboard
     
     # registry service image
-    # image: 127.0.0.1:5009/swarmops-test
+    image: 127.0.0.1:5009/swarmops-backend
     ports:
       - "5000:5000"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+
+    networks:
+      - swarmops_net
 
     deploy:
       placement:
@@ -17,11 +26,15 @@ services:
           - "node.role==manager"
   
   frontend:
-    
     build: ./frontend
+    # registry service image
+    image: 127.0.0.1:5009/swarmops-frontend
     
     ports:
       - "5173:80"
+    
+    networks:
+      - swarmops_net
 
     deploy:
       placement:
