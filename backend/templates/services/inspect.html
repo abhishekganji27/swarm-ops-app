@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<h1> Inspect </h1>
+
+{% if service %} 
+
+    <div class="inspect-box">
+        
+        <dl class="row">
+        <dt class="col-sm-3">ID</dt>
+        <dd class="col-sm-9">{{ service.attrs.ID}}</dd>
+        
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">
+            <p>{{ service.attrs.Spec.Name}}</p>
+        </dd>
+
+        
+        <!-- <dt class="col-sm-3">Labels</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+            <dt class="col-sm-4">Image</dt>
+            <dd class="col-sm-8">127.0.0.1:5001/stackdemo</dd>
+            
+            <dt class="col-sm-4">Namespace</dt>
+            <dd class="col-sm-8">stackdemo</dd>
+            </dl>
+        </dd>
+
+        <dt class="col-sm-3">Ports</dt>
+        <dd class="col-sm-9">
+            <dl class="row">
+            <dt class="col-sm-4">Published Port</dt>
+            <dd class="col-sm-8">8000</dd>
+            
+            <dt class="col-sm-4">Target Port</dt>
+            <dd class="col-sm-8">8000</dd>
+            </dl>
+        </dd>
+        
+        <dt class="col-sm-3">Service Mode</dt>
+        <dd class="col-sm-9">Replicated</dd>
+        <dt class="col-sm-3">Replicas</dt>
+        <dd class="col-sm-9">1</dd>
+        
+        </dl> -->
+        
+    </div>
+
+{% else %}
+
+    <p> None </p>
+
+{% endif %} 
+
+{% endblock %}
