@@ -1,7 +1,11 @@
 services:
   backend:
     build: ./backend
+    # docker hub image
     # image: abhishekganji27/docker-swarm-dashboard
+    
+    # registry service image
+    # image: 127.0.0.1:5009/swarmops-test
     ports:
       - "5000:5000"
     volumes:
