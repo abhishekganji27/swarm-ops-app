@@ -31,7 +31,7 @@ services:
     image: 127.0.0.1:5009/swarmops-frontend
     
     ports:
-      - "5173:80"
+      - "8080:8080"
     
     networks:
       - swarmops_net
