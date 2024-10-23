@@ -7,7 +7,7 @@ const Home = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/');
+        const response = await fetch('http://backend:5000/');
         const data = await response.json();
         setMessage(data);
       } catch (error) {
@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>{obj.message}</h1>
+      <h1>{obj}</h1>
     </>
   );
 };
